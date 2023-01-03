@@ -4,16 +4,18 @@ import { ToastrService } from 'ngx-toastr';
 import { ApiService } from 'src/app/shared/api.service';
 
 @Component({
-  selector: 'app-air-ticket',
-  templateUrl: './air-ticket.component.html',
-  styleUrls: ['./air-ticket.component.css']
+  selector: 'app-train',
+  templateUrl: './train.component.html',
+  styleUrls: ['./train.component.scss']
 })
-export class AirTicketComponent implements OnInit {
+export class TrainComponent implements OnInit {
+
+
   selected = 'option2';
-  airticketForm: FormGroup | any;
+  TrainticketForm: FormGroup | any;
   constructor(private formbuilder: FormBuilder, private api: ApiService, private toastr: ToastrService) { }
   ngOnInit(): void {
-    this.airticketForm = new FormGroup({
+    this.TrainticketForm = new FormGroup({
       LeavingFrom: new FormControl('', [Validators.required,]),
       GoingTo: new FormControl('', [Validators.required,]),
       toppings: new FormControl('', [Validators.required,]),
@@ -21,10 +23,10 @@ export class AirTicketComponent implements OnInit {
 
     });
     const toSelect = this.toppingList.find((c) => c.id == 1);
-    this.airticketForm.get('toppings').setValue(toSelect);
+    this.TrainticketForm.get('toppings').setValue(toSelect);
 
     const toclass = this.classList.find((c) => c.id == 3);
-    this.airticketForm.get('class').setValue(toclass);
+    this.TrainticketForm.get('class').setValue(toclass);
   }
 
   toppingList = [
@@ -45,28 +47,32 @@ export class AirTicketComponent implements OnInit {
   classList = [
     {
       id: 1,
-      name: 'First',
+      name: 'First Ac',
     },
     {
       id: 2,
-      name: 'Businees',
+      name: 'Second Ac',
     },
     {
       id: 3,
-      name: 'Econommy'
+      name: 'Third Ac'
     }, {
       id: 4,
-      name: 'Premium Economy'
+      name: 'Second Class'
+    },
+    {
+      id: 4,
+      name: 'General'
     },
   ];
 
-  onAirticketSubmit() {
-    if (this.airticketForm.valid) {
-      this.api.postAirticket(this.airticketForm.value)
+  onTrainticketSubmit() {
+    if (this.TrainticketForm.valid) {
+      this.api.postAirticket(this.TrainticketForm.value)
         .subscribe({
           next: (res) => {
             this.toastr.success('details added successfully', 'successfully', { timeOut: 2000, });
-            this.airticketForm.reset();
+            this.TrainticketForm.reset();
           },
           error: () => {
             this.toastr.error('error while adding  the data', 'error', { timeOut: 2000, });

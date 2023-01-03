@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row" align="center">
+        <div class="card">
+            <h1>Add New Product</h1>
+            <form [formGroup]="addproduct" (ngSubmit)="AddProductsubmit()">
+                <input class="form-control" type="text" placeholder="Enter Product Name" name="name"
+                    formControlName="name"><br>
+                <input class="form-control" type="text" placeholder="Enter Product Price" name="Price"
+                    formControlName="Price"><br>
+                <input class="form-control" type="text" placeholder="Enter Product Color" name="color"
+                    formControlName="color"><br>
+                <input class="form-control" type="text" placeholder="Enter Product Catagory" name="Catagory"
+                    formControlName="Catagory"><br>
+                <textarea class="form-control" type="text" placeholder="Enter Product Description" name="Description"
+                    formControlName="Description"></textarea><br>
+                <input class="form-control" type="text" placeholder="Enter Product Image Url" name="name"
+                    formControlName="Image"><br>
+                <button type="submit" class="btn btn-primary">Add Product</button>
+
+            </form>
+        </div>
+    </div>
+
+</div>

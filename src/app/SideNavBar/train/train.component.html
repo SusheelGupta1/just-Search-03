@@ -42,12 +42,12 @@
         <mat-card class="example-card container">
             <mat-card-header class="row text-center">
                 <mat-card-title>
-                    <span>BOOK FLIGHT TICKETS</span>
+                    <span>BOOK TRAIN TICKETS</span>
                 </mat-card-title>
             </mat-card-header>
             <span><br></span>
             <div class="example-container">
-                <form [formGroup]="airticketForm" novalidate (ngSubmit)="onAirticketSubmit()" class="d-flex-center">
+                <form [formGroup]="TrainticketForm" novalidate (ngSubmit)="onTrainticketSubmit()" class="d-flex-center">
 
                     <div class="example-form-fields">
                         <mat-form-field class="example-full-width" appearance="outline" >
@@ -72,7 +72,7 @@
                             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
 
                             <mat-error
-                                *ngIf="airticketForm.get('LeavingFrom')?.invalid && (airticketForm.get('LeavingFrom')?.dirty || airticketForm.get('LeavingFrom')?.touched) && airticketForm.get('LeavingFrom')?.errors?.required">
+                                *ngIf="TrainticketForm.get('LeavingFrom')?.invalid && (TrainticketForm.get('LeavingFrom')?.dirty || TrainticketForm.get('LeavingFrom')?.touched) && TrainticketForm.get('LeavingFrom')?.errors?.required">
                                 Leaving From is <strong>required</strong>
                             </mat-error>
                         </mat-form-field>
@@ -84,7 +84,7 @@
                             <mat-icon matSuffix>perm_identity</mat-icon>
 
                             <mat-error
-                                *ngIf="airticketForm.get('GoingTo')?.invalid && (airticketForm.get('GoingTo')?.dirty || airticketForm.get('GoingTo')?.touched) && airticketForm.get('GoingTo')?.errors?.required">
+                                *ngIf="TrainticketForm.get('GoingTo')?.invalid && (TrainticketForm.get('GoingTo')?.dirty || TrainticketForm.get('GoingTo')?.touched) && TrainticketForm.get('GoingTo')?.errors?.required">
                                 Going To is <strong>required</strong>
                             </mat-error>
                         </mat-form-field>
@@ -136,7 +136,7 @@
                     <mat-divider></mat-divider>
                     <!-- button Submit -->
                     <mat-card-actions>
-                        <button class="butt1" mat-raised-button color="primary" mat-button>Submit Requirement</button>
+                        <button class="butt1" mat-raised-button color="primary" mat-button>SEARCH</button>
                     </mat-card-actions>
                 </form>
             </div>

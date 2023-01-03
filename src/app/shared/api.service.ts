@@ -20,6 +20,9 @@ export class ApiService {
   postAirticket(data: any) {
     return this.http.post<any>("http://localhost:3000/Airticket/", data);
   }
+  postTrainticket(data: any) {
+    return this.http.post<any>("http://localhost:3000/Trainticket/", data);
+  }
   getLogin() {
     return this.http.get<any>("http://localhost:3000/signup/");
   }
@@ -40,4 +43,13 @@ export class ApiService {
   // deleteEmp(id: number) {
   //   return this.http.delete<any>("http://localhost:3000/emplist/" + id);
   // }
+  addproduct(data:any){
+    return this.http.post<any>("http://localhost:3000/products/", data);
+  }
+  productList(){
+    return this.http.get<any[]>("http://localhost:3000/products/" );
+  }
+  DeleteProduct(id:number){
+   return this.http.delete('http://localhost:3000/products/'+ id);
+  }
 }

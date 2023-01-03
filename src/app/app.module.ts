@@ -33,6 +33,12 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { AutoCareComponent } from './SideNavBar/auto-care/auto-care.component';
 import { AutoMobileComponent } from './SideNavBar/auto-mobile/auto-mobile.component';
 import { LoansComponent } from './SideNavBar/loans/loans.component';
+import { ShoppingComponent } from './SideNavBar/shopping/shopping.component';
+import { BabyCareComponent } from './SideNavBar/baby-care/baby-care.component';
+import { BookComponent } from './SideNavBar/book/book.component';
+import { TrainComponent } from './SideNavBar/train/train.component';
+import { AddSellerProductComponent } from './add-seller-product/add-seller-product.component';
+import { ListComponent } from './AddSellerProduct/list/list.component';
 
 
 
@@ -49,6 +55,12 @@ import { LoansComponent } from './SideNavBar/loans/loans.component';
     AutoCareComponent,
     AutoMobileComponent,
     LoansComponent,
+    ShoppingComponent,
+    BabyCareComponent,
+    BookComponent,
+    TrainComponent,
+    AddSellerProductComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,
